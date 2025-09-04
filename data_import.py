@@ -23,12 +23,12 @@ def data_cleanup():
     column_ref = ''
     for year in YEARS:
         df = pd.read_excel(RAW_EXCEL_FILE, sheet_name=str(year))
-        # year_columns = ','.join(list(df.columns))
+        year_columns = ','.join(list(df.columns))
 
         if year == FIRST_YEAR:
-            column_ref = df.columns # year_columns
+            column_ref = year_columns
         else:
-            assert column_ref == df.columns, f'column mismatch ref for year {year}'
+            assert column_ref == year_columns, f'column mismatch ref for year {year}'
 
         df['year'] = year
         year_dfs.append(df)
