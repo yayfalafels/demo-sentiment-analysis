@@ -6,3 +6,4 @@ site
 .pytest_cache*
 s3-mcfpipe*
 *.whl
+*.csv
